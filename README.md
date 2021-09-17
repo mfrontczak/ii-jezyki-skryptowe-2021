@@ -1,1 +1,1 @@
-# ii-jezyki-skryptowe-2021
+# Języki Skryptowe
