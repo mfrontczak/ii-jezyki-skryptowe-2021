@@ -79,7 +79,7 @@ zmienna1 = 0.4533113  # nowy typ na podstawie przypisania wartości do zmiennej 
 print(f'zmienna1={zmienna1}, typ={type(zmienna1)}')
 ```
 
-**Podstawowe typy zmiennych w pythonie:**
+#### Podstawowe typy zmiennych
 ```python
 str
 int
@@ -97,12 +97,63 @@ prawda = True               # zmienna przechowująca wartość logiczną (typ bo
 c = 1 + 3j                  # zmienna przechowująca liczbę zespoloną (typ complex) 
 ```
 
+#### Struktury dane
+Prócz podstawowych typów danych, można jeszcze wyróżnić:
+```python
+list      # tablica gdzie kluczem jest indeks (wartość całkowita) 
+dict      # słownik gdzie kluczem może być dowolna wartość - niemodyfikowalna - czyli taka z której można wygenerować unikalny hash
+set       # zbiór unikalnych wartości, kluczem jest indeks
+tuple     # krotka niemodyfikowalna tablica (lista)
+frozenset # zbiór, niemodyfikowalny
+```
+
+przykład:
+```python
+l = [1, 2, 3, 4]  # lista
+
+>>> l[3]
+4
+
+d = {     # słownik (mapa klucz-wartość)
+  'klucz1': 'ala ma kota',
+  'klucz2': 'płotek',
+  'moja_lista': l,
+  5: 'pięć'
+}
+
+>>> d['klucz1']
+'ala ma kota'
+>>> d[5]
+'pięć'
+
+s = set([1, 3, 5, 3, 2, 1, 1, 1])
+>>> s
+{1, 2, 3, 5}
+>>> s.add(10)
+>>> s
+{1, 2, 3, 5, 10}
+
+t = (1, 4, 5, 3, 2, 1)
+>>> t
+(1, 4, 5, 3, 2, 1)
+>>> t[1]
+4
+
+
+fs = frozenset([1, 3, 4, 3, 3, 2, 1])
+>>> fs
+frozenset({1, 2, 3, 4})
+
+```
+
+**type hinting**
 Nowa wersja pythona 3.X wspiera type hinting - programista może wykorzystać go do poinformowania innego programisty (nie jest to wymuszone, a jedynie sugestią) jakiego typu 
 dane powinny zostać przekazane do funkcji (lub metody), oraz jakiego typu wartość jest zwracana przez funkcję (lub metode). 
 ```python
 def say_my_name(name: str) -> None:
     print(f"My name is ... {name}")
 ```
+więcej można przeczytać tutaj: https://docs.python.org/3/library/typing.html
 
 
 ### Zadanie
