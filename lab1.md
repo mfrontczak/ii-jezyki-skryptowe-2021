@@ -103,9 +103,9 @@ pip uninstall -r requirements.txt  # usunie listę pakietów które znajdują si
 
 **Zadanie**
 1. ✏️ Zainstaluj środowisko Anaconda/Python 3.8.
-2. ✏️ Zainstaluj moduł ipython. :mag:
+2. ✏️ Zainstaluj moduł `ipython`. :mag:
 3. ✏️ Zapoznaj się z dokumentacją opisującą moduł `timeit` (https://docs.python.org/3/library/timeit.html).
-4. ✏️ Uruchom ipython i wykonaj następujący kod: 
+4. ✏️ Uruchom `ipython` i wykonaj następujący kod: 
 ```python
 import this
 ```
@@ -160,7 +160,9 @@ frozenset # zbiór, niemodyfikowalny
 przykład:
 ```python
 l = [1, 2, 3, 4]  # lista
-l[3]
+print(l[3])
+l.append(6)
+print(l)
 
 d = {     # słownik (mapa klucz-wartość)
   'klucz1': 'ala ma kota',
@@ -170,20 +172,50 @@ d = {     # słownik (mapa klucz-wartość)
 }
 
 d['klucz1']
-d[5]
+print(d[5])
+# mała modyfikacja
+d[5] = 'sześć'
+print(d[5])
 
 s = set([1, 3, 5, 3, 2, 1, 1, 1])  # zbiór unikalnych wartości
-s
+print(s)
 s.add(10)
-s
+print(s)
 
 t = (1, 4, 5, 3, 2, 1)  # tuple - krotka
-t
-t[1]
+print(t)
+print(t[1])
 
 fs = frozenset([1, 3, 4, 3, 3, 2, 1])  # niemodyfikowany zbiór
-fs
+print(fs)
 ```
+
+Przykład 2:
+```python
+l = [1, 2, 3, 4]
+l[0] = '2'
+print(l)
+```
+Przykład 3 (powinniśmy otrzymać błąd):
+```python
+t = (1, 4, 5, 3, 2, 1)
+t[1] = 10
+print(t)
+```
+
+Przykład 4 (też nie działa):
+```python
+s = {1, 4, 5, 3, 2, 1}  # alternatywna składnia do (nie mylić z słownikiem): set([1, 4, 5, 3, 2, 1])
+s[1] = 10
+print(s)
+```
+
+**Problem**
+
+✏️ Jak zmodyfikować krotkę / zbiór? 
+
+🔍 Poszukaj rozwiązania w sieci.
+
 
 **Problem**
 
@@ -201,33 +233,30 @@ person_info = ['Imię', 'Nazwisko', (2001, 9, 11)]
 
 **Zadanie** 
 
-✏️ Sprawdź wydajność poszczególnych struktur danych dla różnych danych.
+✏️ Sprawdź wydajność poszczególnych struktur danych dla różnych typów danych.
+
+**Zadanie** 
+
+✏️ Stwórz słownik (`dict`) w którym będziesz przechowywał informację o ilości schronisk w danym mieście dla miast (kluczy): Kraków, Warszawa, Poznań.
+
+**Zadanie** 
+
+✏️ W Poznaniu i Krakowie wybudowano nowe schronisko, w Warszawie wybudowano aż trzy. 
+W poprzednio utworzonym słowniku (`dict`) zaktualizuj informację o liczbie schronisk.
+
+**Zadanie** 
+
+✏️ Do naszego słownika z informacją o schroniskach dodaj nowe miasto Rzeszów z liczbą schronisk 3.
+
+
+**Zadanie** 
+
+✏️ Korzystając z funkcji `input()` poproś użytkownika o miasto (klucz) dla którego chce wyświetlić informacje o liczbie schronisk.
 
 
 ---
-:book: Proszę przeczytać https://docs.python.org/3/library/stdtypes.html, aby dowiedzieć się więcej.
+📖 Proszę przeczytać https://docs.python.org/3/library/stdtypes.html, aby dowiedzieć się więcej.
 
-
-### Wbudowane funkcje
-
-:memo: Wybrane wbudowanych funkcje które warto znać:
-* [print](https://docs.python.org/3/library/functions.html#print)
-* [input](https://docs.python.org/3/library/functions.html#input)
-* [range](https://docs.python.org/3/library/functions.html#func-range)
-* [len](https://docs.python.org/3/library/functions.html#len)
-* [help](https://docs.python.org/3/library/functions.html#help)
-* [type](https://docs.python.org/3/library/functions.html#type)
-* [dir](https://docs.python.org/3/library/functions.html#dir)
-* [globals](https://docs.python.org/3/library/functions.html#globals)
-* [locals](https://docs.python.org/3/library/functions.html#locals)
-* [id](https://docs.python.org/3/library/functions.html#id)
-* [hash](https://docs.python.org/3/library/functions.html#hash)
-* [hasattr](https://docs.python.org/3/library/functions.html#hasattr)
-* [getattr](https://docs.python.org/3/library/functions.html#getattr)
-* [isinstance](https://docs.python.org/3/library/functions.html#isinstance)
-
----
-:book: Proszę przeczytać https://docs.python.org/3/library/functions.html, aby dowiedzieć się więcej.
 
 ### Sterowanie przebiegiem programu
 
@@ -292,6 +321,52 @@ for conv in (int, float, str):
 
 
 ### Funkcje
+
+#### Wbudowane funkcje
+
+:memo: Wybrane wbudowanych funkcje które warto znać:
+* [print](https://docs.python.org/3/library/functions.html#print)
+* [input](https://docs.python.org/3/library/functions.html#input)
+* [range](https://docs.python.org/3/library/functions.html#func-range)
+* [len](https://docs.python.org/3/library/functions.html#len)
+* [help](https://docs.python.org/3/library/functions.html#help)
+* [type](https://docs.python.org/3/library/functions.html#type)
+* [dir](https://docs.python.org/3/library/functions.html#dir)
+* [globals](https://docs.python.org/3/library/functions.html#globals)
+* [locals](https://docs.python.org/3/library/functions.html#locals)
+* [id](https://docs.python.org/3/library/functions.html#id)
+* [hash](https://docs.python.org/3/library/functions.html#hash)
+* [hasattr](https://docs.python.org/3/library/functions.html#hasattr)
+* [getattr](https://docs.python.org/3/library/functions.html#getattr)
+* [isinstance](https://docs.python.org/3/library/functions.html#isinstance)
+
+Przykład 1:
+```python
+name = input("Jak masz na imię? ")
+name_len = len(name)
+print(f"{name} to wspaniałe imie! Twoje imie ma {name_len} znaków.")
+```
+
+Przykład 2:
+```python
+age = int(input("Ile masz lat? "))
+age_cpy = age
+
+print(f"id({age}) = {id(age)}")
+print(f"id({age_cpy}) = {id(age_cpy)}")
+```
+
+Przykład 3 (z błędem - bez rzutowania na int):
+```python
+age = input("Ile masz lat? ")
+age_in_10_years = age + 10
+print(f"dziś mam {age} a za 10 lat będę miał {age_in_10_years}")
+```
+
+---
+:book: Proszę przeczytać https://docs.python.org/3/library/functions.html, aby dowiedzieć się więcej.
+
+#### definiowanie własnych funkcji
 W pythonie funkcje definiujemy przy użyciu słowa kluczowego `def` i nazwy.
 
 Przykład 1:
