@@ -1,4 +1,16 @@
-# Laboratorium 1
+# Języki Skryptowe - Lab 1
+
+**Legenda:**
+
+📖 - proszę przeczytać
+
+📝 - warte zapamiętania / zanotowania
+
+⚠️ - zwróć uwagę
+
+✏️ - zadanie do wykonania
+
+🔍 - poszukaj w internecie
 
 ## Wprowadzenie
 **Python** - Język skryptowy (język programowania wysokiego poziomu) ogólnego przeznaczenia. Do jego głównych cech zalicza się wysoką czytelność kodu źródłowego. Wspiera [programowanie wielo-paradygmatowe](https://pl.wikipedia.org/wiki/Paradygmat_programowania).
@@ -58,19 +70,30 @@ for i in arr:
 
 przykład 3:
 ```python
-def policz_delte(a, b, c):
-  return b*b - 4*a*c
- 
-print("delta dla a=1, b=2, c=1 wynosi: {}".format(policz_delte(1,2,1))
+def oblicz_delte(a, b, c):
+    return b*b - 4*a*c
+
+
+print("delta dla a=1, b=2, c=1 wynosi: {}".format(oblicz_delte(1,2,1)))
+```
+
+**Zadanie**
+
+1. Zainstaluj środowisko Anaconda/Python.
+2. Zainstaluj moduł ipython. :mag:
+2. Zapoznaj się z dokumentacją opisującą moduł `timeit` (https://docs.python.org/3/library/timeit.html).
+3. Uruchom ipython i wykonaj następujący kod: 
+```python
+import this
 ```
 
 ### Zmienna
 
 Nazwa zmiennej jest obarczona pewnymi ograniczeniami - nie może zaczynać się od cyfry ani zawierać znaków specjalnych. Zalecane jest nazewnictwo zgodne z przeznaczeniem lub informacją którą ma przechowywać dana zmienna. 
 
-:exclamation: Należy pamiętać, że w Pythonie typ zmiennej jest określany w trakcie przypisania wartości i może się zmienić (jest dynamiczny:dash:). :exclamation:
+:warning: W Pythonie typ zmiennej jest określany w trakcie przypisania wartości i może się zmienić (jest dynamiczny:dash:). 
 
-```
+```python
 zmienna1 = 'Paweł'    # jest to teraz zmienna typu str (String - Łańcuch znakowy)
 print(f'zmienna1={zmienna1}, typ={type(zmienna1)}')
 zmienna1 = 12345      # teraz typ zostanie określony na int (Integer - liczba całkowita)
@@ -79,13 +102,17 @@ zmienna1 = 0.4533113  # nowy typ na podstawie przypisania wartości do zmiennej 
 print(f'zmienna1={zmienna1}, typ={type(zmienna1)}')
 ```
 
-#### Podstawowe typy zmiennych
+### Standardowe typy danych
+
+#### Proste 
 ```python
-str
-int
-float
-bool
-complex
+# łancuchy znakowe
+str   # string - łańcuch znakowy
+
+# numeryczne
+int      # integer - liczba całkowita
+float    # floating point number - liczba zmienno przecinkowa
+complex  # complex - liczb zespolona
 ```
 
 przykład:
@@ -97,8 +124,8 @@ prawda = True               # zmienna przechowująca wartość logiczną (typ bo
 c = 1 + 3j                  # zmienna przechowująca liczbę zespoloną (typ complex) 
 ```
 
-#### Struktury dane
-Prócz podstawowych typów danych, można jeszcze wyróżnić:
+#### Struktury danych
+Prócz prostych typów danych, można jeszcze wyróżnić:
 ```python
 list      # tablica gdzie kluczem jest indeks (wartość całkowita) 
 dict      # słownik gdzie kluczem może być dowolna wartość - niemodyfikowalna - czyli taka z której można wygenerować unikalny hash
@@ -110,9 +137,7 @@ frozenset # zbiór, niemodyfikowalny
 przykład:
 ```python
 l = [1, 2, 3, 4]  # lista
-
->>> l[3]
-4
+l[3]
 
 d = {     # słownik (mapa klucz-wartość)
   'klucz1': 'ala ma kota',
@@ -121,62 +146,106 @@ d = {     # słownik (mapa klucz-wartość)
   5: 'pięć'
 }
 
->>> d['klucz1']
-'ala ma kota'
->>> d[5]
-'pięć'
+d['klucz1']
+d[5]
 
-s = set([1, 3, 5, 3, 2, 1, 1, 1])
->>> s
-{1, 2, 3, 5}
->>> s.add(10)
->>> s
-{1, 2, 3, 5, 10}
+s = set([1, 3, 5, 3, 2, 1, 1, 1])  # zbiór unikalnych wartości
+s
+s.add(10)
+s
 
-t = (1, 4, 5, 3, 2, 1)
->>> t
-(1, 4, 5, 3, 2, 1)
->>> t[1]
-4
+t = (1, 4, 5, 3, 2, 1)  # tuple - krotka
+t
+t[1]
 
-
-fs = frozenset([1, 3, 4, 3, 3, 2, 1])
->>> fs
-frozenset({1, 2, 3, 4})
-
+fs = frozenset([1, 3, 4, 3, 3, 2, 1])  # niemodyfikowany zbiór
+fs
 ```
 
-**type hinting**
-Nowa wersja pythona 3.X wspiera type hinting - programista może wykorzystać go do poinformowania innego programisty (nie jest to wymuszone, a jedynie sugestią) jakiego typu 
-dane powinny zostać przekazane do funkcji (lub metody), oraz jakiego typu wartość jest zwracana przez funkcję (lub metode). 
-```python
-def say_my_name(name: str) -> None:
-    print(f"My name is ... {name}")
-```
-więcej można przeczytać tutaj: https://docs.python.org/3/library/typing.html
+:book: Proszę przeczytać https://docs.python.org/3/library/stdtypes.html, aby dowiedzieć się więcej.
 
 
-### Zadanie
-Zainstaluj środowisko Anaconda. 
-Dla systemu windows: https://repo.anaconda.com/archive/Anaconda3-2021.05-Windows-x86_64.exe
-alternatywa: https://www.anaconda.com/products/individual
+**Zadanie** 
+
+✏️ Sprawdź wydajność poszczególnych struktur danych dla różnych danych.
 
 
-Zapoznaj się z dokumentacją opisującą następujące wbudowane funkcje:
+### Wbudowane funkcje
 
-* [help](https://docs.python.org/3/library/functions.html#help)
+:memo: Wybrane wbudowanych funkcje które warto znać:
 * [print](https://docs.python.org/3/library/functions.html#print)
 * [input](https://docs.python.org/3/library/functions.html#input)
+* [range](https://docs.python.org/3/library/functions.html#func-range)
 * [len](https://docs.python.org/3/library/functions.html#len)
+* [help](https://docs.python.org/3/library/functions.html#help)
 * [type](https://docs.python.org/3/library/functions.html#type)
 * [dir](https://docs.python.org/3/library/functions.html#dir)
+* [globals](https://docs.python.org/3/library/functions.html#globals)
+* [locals](https://docs.python.org/3/library/functions.html#locals)
+* [id](https://docs.python.org/3/library/functions.html#id)
+* [hash](https://docs.python.org/3/library/functions.html#hash)
+* [hasattr](https://docs.python.org/3/library/functions.html#hasattr)
+* [getattr](https://docs.python.org/3/library/functions.html#getattr)
+* [isinstance](https://docs.python.org/3/library/functions.html#isinstance)
 
 
-Korzystając z funkcji `help()` dowiedz się coś na temat:
+:book: Proszę przeczytać https://docs.python.org/3/library/functions.html, aby dowiedzieć się więcej.
 
-* int
-* float
-* str
-* print
-* input
-* len
+### Sterowanie przebiegiem programu
+
+Instrukcja warunkowa `if`:
+
+przykład 1:
+```python
+x = 11
+if x > 10:
+    print("x jest większe niż 10")
+elif x == 10:
+    print("x jest równe 10")
+else:
+    print("x jest mniejsze niż 10")
+```
+
+przykład 2:
+```python
+x = 255
+arr = [11, 255, 555, 100, 421]
+if x in arr:
+  pos = arr.index(x)
+  print(f"x znajduje sie na pozycji {pos} w liście arr")
+else:
+  print(f"wartość {x} nie została znaleziona w liście")
+```
+
+Pętla `while`:
+```python
+i = 0
+while i < 10:
+    print(f"i = {i}")
+    i += 1
+```
+
+Pętla `for`:
+
+Przykład 1:
+```python
+for i in range(10):
+    print(f"i = {i}")
+```
+
+Przykład 2:
+```python
+for slowo in ['ala', 'ma', 'kota']:
+    print(f"{slowo}", end=" ")
+```
+
+Przykład 3:
+```python
+for conv in (int, float, str):
+    print(f"{conv.__name__}(5.59) = {conv(5.59)}")
+```
+
+:book: Proszę przeczytać https://docs.python.org/3/tutorial/controlflow.html, aby dowiedzieć się więcej.
+
+
+### Funkcje
