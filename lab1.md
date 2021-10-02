@@ -76,13 +76,11 @@ def oblicz_delte(a, b, c):
 
 print("delta dla a=1, b=2, c=1 wynosi: {}".format(oblicz_delte(1,2,1)))
 ```
-
 **Zadanie**
-
-1. Zainstaluj środowisko Anaconda/Python.
-2. Zainstaluj moduł ipython. :mag:
-2. Zapoznaj się z dokumentacją opisującą moduł `timeit` (https://docs.python.org/3/library/timeit.html).
-3. Uruchom ipython i wykonaj następujący kod: 
+1. ✏️ Zainstaluj środowisko Anaconda/Python.
+2. ✏️ Zainstaluj moduł ipython. :mag:
+2. ✏️ Zapoznaj się z dokumentacją opisującą moduł `timeit` (https://docs.python.org/3/library/timeit.html).
+3. ✏️ Uruchom ipython i wykonaj następujący kod: 
 ```python
 import this
 ```
@@ -162,12 +160,27 @@ fs = frozenset([1, 3, 4, 3, 3, 2, 1])  # niemodyfikowany zbiór
 fs
 ```
 
-:book: Proszę przeczytać https://docs.python.org/3/library/stdtypes.html, aby dowiedzieć się więcej.
+**Problem**
 
+✏️ zapisz elementy krotki/listy/zbioru do osobnych zmiennych. 
+
+🔍 Poszukaj o rozpakowywaniu zmiennych (unpacking).
+
+```python
+t = (5, 'kot', '12,333', 11223)
+l = ['2021-10-02', '2021-10-09', '2021-10-16', '2021-10-23', '2021-10-30', '2021-11-06', '2021-11-13', '2021-11-20']
+s = {5, 6, 7, 9, 10, 10, 11}
+
+person_info = ['Imię', 'Nazwisko', (2001, 9, 11)]
+```
 
 **Zadanie** 
 
 ✏️ Sprawdź wydajność poszczególnych struktur danych dla różnych danych.
+
+
+---
+:book: Proszę przeczytać https://docs.python.org/3/library/stdtypes.html, aby dowiedzieć się więcej.
 
 
 ### Wbudowane funkcje
@@ -188,7 +201,7 @@ fs
 * [getattr](https://docs.python.org/3/library/functions.html#getattr)
 * [isinstance](https://docs.python.org/3/library/functions.html#isinstance)
 
-
+---
 :book: Proszę przeczytać https://docs.python.org/3/library/functions.html, aby dowiedzieć się więcej.
 
 ### Sterowanie przebiegiem programu
@@ -245,6 +258,7 @@ for conv in (int, float, str):
     print(f"{conv.__name__}(5.59) = {conv(5.59)}")
 ```
 
+---
 :book: Proszę przeczytać https://docs.python.org/3/tutorial/controlflow.html, aby dowiedzieć się więcej.
 
 
