@@ -263,3 +263,70 @@ for conv in (int, float, str):
 
 
 ### Funkcje
+W pythonie funkcje definiujemy przy użyciu słowa kluczowego `def` i nazwy.
+
+Przykład 1:
+```python
+def say_hello():
+    pass
+    
+say_hello()  # wywołanie funkcji bez argumentów
+```
+
+Przykład 2:
+```python  
+# przykład funkcji z jednym argumentem
+def say_hello_to(name):
+    print(f"Hello {name}")
+
+
+say_hello_to('Johnny')  # wywołanie funkcji z jednym argumentem
+```
+
+#### funkcje z wieloma argumentami
+Kolejne argumenty umieszczamy po przecinku.
+
+Przykład 1:
+```python
+def sum_numbers(a, b, c, d, e):
+    return a + b + c + d + e
+```
+
+Przykład 2:
+```python
+def sum_numbers(*args):
+  ????
+```
+
+#### funkcje z domyślną wartością dla argumentów
+Kiedy chcemy zdefinicować domyślną wartość argumentu, należy w trakcie definicji funkcji przypisać wartość domyślną dla danego argumentu.
+
+⚠️ Argumenty z domyślną wartością muszą znajdować się na końcu.
+
+Przykład 1:
+```python
+def call_math_func(a, b, c, d, e, func=sum):
+    return func([a, b, c, d, e])
+  
+
+suma = call_math_func(1,2,3,4,5)  # domyślnie dla argumentu func zostanie przypisany adres funkcji sum.
+mini = call_math_func(1,2,3,4,5, min)  # argument func przyjmie adres funkcji min.
+
+print(suma)
+print(mini)
+```
+
+Przykład 2:
+```python
+def multiple_x_by(x, multiplier=1):
+  return x * multiplier
+
+
+print(multiple_x_by(5))  # domyślną wartością dla multiplier będzie 1
+print(multiple_x_by(6, 10)) # w tym przypadku wartość argumentu multiplier wynosi 10
+print(multiple_x_by(7))  # domyślną wartością dla multiplier będzie 1
+```
+
+---
+:book: Proszę przeczytać https://docs.python.org/3/tutorial/controlflow.html#defining-functions, aby dowiedzieć się więcej.
+
