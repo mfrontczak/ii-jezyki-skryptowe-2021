@@ -16,7 +16,7 @@
 **Python** - Język skryptowy (język programowania wysokiego poziomu) ogólnego przeznaczenia. Do jego głównych cech zalicza się wysoką czytelność kodu źródłowego. Wspiera [programowanie wielo-paradygmatowe](https://pl.wikipedia.org/wiki/Paradygmat_programowania).
 
 
-### Przykłady kodu w C
+### Przykłady kodu w C i Pythonie
 
 Przykład 1:
 ```C
@@ -26,6 +26,10 @@ int main() {
   printf("Hello World from C\n");
   return 0;
 }
+```
+
+```python
+print("Hello World from Python")
 ```
 
 Przykład 2:
@@ -41,9 +45,16 @@ int main() {
 }
 ```
 
+```python
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for i in arr:
+    print(i)
+```
+
 przykład 3:
 ```C
 #include <stdio.h>
+
 int oblicz_delte(short a, short b, short c) {
   return b*b - 4*a*c;
 }
@@ -52,23 +63,8 @@ int main() {
   printf("delta dla a=1, b=2, c=1 wynosi: %d\n", delta(1, 2, 1));
   return 0;
 }
-```  
-
-### Przykłady kodu w Pythonie
-
-Przykład 1:
-```python
-print("Hello World from Python")
 ```
 
-Przykład 2:
-```python
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-for i in arr:
-    print(i)
-```
-
-przykład 3:
 ```python
 def oblicz_delte(a, b, c):
     return b*b - 4*a*c
@@ -76,11 +72,40 @@ def oblicz_delte(a, b, c):
 
 print("delta dla a=1, b=2, c=1 wynosi: {}".format(oblicz_delte(1,2,1)))
 ```
+
+### zarządzanie modułami w Pythonie
+Do zarządzania modułami w Pythonie służy skrypt `pip`. 
+
+Więcej o projekcie i dostępnych modułach można znaleźć na https://pypi.org/.
+
+#### :memo: lista przydatnych komend
+
+lista zainstalowanych modułów:
+```bash
+pip list
+```
+lista zainstalowanych modułów w składni dla komendy `pip install -r`.
+```bash
+pip freeze > requirements.txt  # zapisujemy 
+```
+
+instalacja nowego modułu:
+```bash
+pip install [--user] [-U] nazwa_pakietu[==konkretna wersja]
+pip install -r requirements.txt   # instalujemy listę pakietów które znajdują się w pliku requirements.txt
+```
+
+Usunięcie modułu z środowiska:
+```bash
+pip uninstall nazwa_pakietu
+pip uninstall -r requirements.txt  # usunie listę pakietów które znajdują się w pliku requirements.txt
+```
+
 **Zadanie**
-1. ✏️ Zainstaluj środowisko Anaconda/Python.
+1. ✏️ Zainstaluj środowisko Anaconda/Python 3.8.
 2. ✏️ Zainstaluj moduł ipython. :mag:
-2. ✏️ Zapoznaj się z dokumentacją opisującą moduł `timeit` (https://docs.python.org/3/library/timeit.html).
-3. ✏️ Uruchom ipython i wykonaj następujący kod: 
+3. ✏️ Zapoznaj się z dokumentacją opisującą moduł `timeit` (https://docs.python.org/3/library/timeit.html).
+4. ✏️ Uruchom ipython i wykonaj następujący kod: 
 ```python
 import this
 ```
@@ -230,6 +255,10 @@ else:
   print(f"wartość {x} nie została znaleziona w liście")
 ```
 
+**Problem**
+
+✏️ W Pythonie nie istnieje instrukcja `switch`. Spróbuj ją zasymulować.
+
 Pętla `while`:
 ```python
 i = 0
@@ -329,4 +358,3 @@ print(multiple_x_by(7))  # domyślną wartością dla multiplier będzie 1
 
 ---
 :book: Proszę przeczytać https://docs.python.org/3/tutorial/controlflow.html#defining-functions, aby dowiedzieć się więcej.
-
