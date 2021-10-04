@@ -19,6 +19,8 @@
 ### Przykłady kodu w C i Pythonie
 
 Przykład 1:
+
+**Kod w C**
 ```C
 #include <stdio.h>
 
@@ -28,11 +30,14 @@ int main() {
 }
 ```
 
+**Kod w Pythonie**
 ```python
 print("Hello World from Python")
 ```
 
 Przykład 2:
+
+**Kod w C**
 ```C
 #include <stdio.h>
 
@@ -45,6 +50,7 @@ int main() {
 }
 ```
 
+**Kod w Pythonie**
 ```python
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for i in arr:
@@ -52,6 +58,9 @@ for i in arr:
 ```
 
 przykład 3:
+
+
+**Kod w C**
 ```C
 #include <stdio.h>
 
@@ -65,6 +74,7 @@ int main() {
 }
 ```
 
+**Kod w Pythonie**
 ```python
 def oblicz_delte(a, b, c):
     return b*b - 4*a*c
@@ -73,12 +83,22 @@ def oblicz_delte(a, b, c):
 print("delta dla a=1, b=2, c=1 wynosi: {}".format(oblicz_delte(1,2,1)))
 ```
 
-### zarządzanie modułami w Pythonie
-Do zarządzania modułami w Pythonie służy skrypt `pip`. 
+### Zarządzanie modułami w Pythonie
+W Pythonie modułem nazywamy plik które udostępnia nam zbiór funkcji i/lub klas. 
+Moduł importujemy przy użyciu słowa kluczowego `import`, na przykład:
+```python
+import os
+import sys
+import pdb
+```
+
+Python domyślnie udostępnia standardowa biblioteka modułów pozwalająca nam od razu rozpocząć programowanie.
+
+W przypadku kiedy chcemy wykorzystać moduł który nie znajduje się w standardowej bibliotece, możemy skorzystać z narzędzia `pip` do zarządzania modułami.
 
 Więcej o projekcie i dostępnych modułach można znaleźć na https://pypi.org/.
 
-#### :memo: lista przydatnych komend
+#### :memo: Lista przydatnych komend
 
 lista zainstalowanych modułów:
 ```bash
@@ -86,7 +106,7 @@ pip list
 ```
 lista zainstalowanych modułów w składni dla komendy `pip install -r`.
 ```bash
-pip freeze > requirements.txt  # zapisujemy 
+pip freeze > requirements.txt  # zapisujemy informację zainstalowanych modułach do pliku requirements.txt
 ```
 
 instalacja nowego modułu:
@@ -117,7 +137,7 @@ Nazwa zmiennej jest obarczona pewnymi ograniczeniami - nie może zaczynać się 
 :warning: W Pythonie typ zmiennej jest określany w trakcie przypisania wartości i może się zmienić (jest dynamiczny:dash:). 
 
 ```python
-zmienna1 = 'Paweł'    # jest to teraz zmienna typu str (String - Łańcuch znakowy)
+zmienna1 = 'Dawid Rybka'    # jest to teraz zmienna typu str (String - Łańcuch znakowy)
 print(f'zmienna1={zmienna1}, typ={type(zmienna1)}')
 zmienna1 = 12345      # teraz typ zostanie określony na int (Integer - liczba całkowita)
 print(f'zmienna1={zmienna1}, typ={type(zmienna1)}')
@@ -387,8 +407,8 @@ def say_hello_to(name):
 say_hello_to('Johnny')  # wywołanie funkcji z jednym argumentem
 ```
 
-#### funkcje z wieloma argumentami
-Kolejne argumenty umieszczamy po przecinku.
+#### Funkcje z wieloma argumentami
+Kolejne nazwane argumenty umieszczamy po przecinku. Jeżeli nie chcemy nazywać naszych argumentów lub ich liczba nie jest z góry znana możemy skorzystać z `*args`.
 
 Przykład 1:
 ```python
@@ -399,10 +419,20 @@ def sum_numbers(a, b, c, d, e):
 Przykład 2:
 ```python
 def sum_numbers(*args):
-  ????
+    result = 0
+    for number in args:
+        result += number
+    return result
 ```
+Istnieje również możliwość obsługi dowolnej ilości nazwanych argumentów, z wykorzystaniem `**kwargs`.
 
-#### funkcje z domyślną wartością dla argumentów
+Przykład:
+```python
+d = {}
+def add_to_dict(**kwargs):
+   d[kwargs.pop('key')] = kwargs
+```
+#### Funkcje z domyślną wartością dla argumentów
 Kiedy chcemy zdefinicować domyślną wartość argumentu, należy w trakcie definicji funkcji przypisać wartość domyślną dla danego argumentu.
 
 ⚠️ Argumenty z domyślną wartością muszą znajdować się na końcu.
@@ -430,6 +460,13 @@ print(multiple_x_by(5))  # domyślną wartością dla multiplier będzie 1
 print(multiple_x_by(6, 10)) # w tym przypadku wartość argumentu multiplier wynosi 10
 print(multiple_x_by(7))  # domyślną wartością dla multiplier będzie 1
 ```
+
+
+**Zadanie** 
+
+✏️ 
+
+
 
 ---
 :book: Proszę przeczytać https://docs.python.org/3/tutorial/controlflow.html#defining-functions, aby dowiedzieć się więcej.
