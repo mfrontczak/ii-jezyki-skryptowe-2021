@@ -408,7 +408,7 @@ say_hello_to('Johnny')  # wywołanie funkcji z jednym argumentem
 ```
 
 #### Funkcje z wieloma argumentami
-Kolejne nazwane argumenty umieszczamy po przecinku. Jeżeli nie chcemy nazywać naszych argumentów lub ich liczba nie jest z góry znana możemy skorzystać z `*args`.
+Kolejne argumenty umieszczamy po przecinku (argumenty pozycyjne). Jeżeli chcemy by nasza funkcja przyjmowała dowolną ilość argumentów (pozycyjnych) możemy użyć  `*args`.
 
 Przykład 1:
 ```python
@@ -433,7 +433,7 @@ def add_to_dict(**kwargs):
    d[kwargs.pop('key')] = kwargs
 ```
 #### Funkcje z domyślną wartością dla argumentów
-Kiedy chcemy zdefinicować domyślną wartość argumentu, należy w trakcie definicji funkcji przypisać wartość domyślną dla danego argumentu.
+Kiedy chcemy zdefiniować domyślną wartość argumentu, należy w trakcie definicji funkcji przypisać wartość domyślną dla danego argumentu.
 
 ⚠️ Argumenty z domyślną wartością muszą znajdować się na końcu.
 
@@ -464,9 +464,15 @@ print(multiple_x_by(7))  # domyślną wartością dla multiplier będzie 1
 
 **Zadanie** 
 
-✏️ 
+✏️ Napisz funkcję która poprosi użytkownika o jego dane osobowe jak imię, nazwisko, wiek. Zaproponuj którą z struktur danych do tego użyć.
 
+✏️ Napisz funkcję która przyjmie dwie wartości liczbowe i zwróci większą z nich (funkcja max).
 
+✏️ Napisz funkcję która przyjmie listę liczb jako argument i zwróci sumę liczb znajdujących się w liście.
+
+✏️ Napisz funkcję która przyjmie dowolnie długą listę liczb (użyj `*args`) i zwróci sumę liczb znajdujących się w liście. 
+
+✏️ Napisz funkcję która przyjmie od użytkownika dane: imie (`str`), nazwisko (`str`), grupa (`str`), obecny (`bool`) i zapisze je do globalnej listy studentów.
 
 ---
 :book: Proszę przeczytać https://docs.python.org/3/tutorial/controlflow.html#defining-functions, aby dowiedzieć się więcej.
