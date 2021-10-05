@@ -442,8 +442,14 @@ Istnieje również możliwość obsługi dowolnej ilości nazwanych argumentów,
 Przykład:
 ```python
 d = {}
-def add_to_dict(**kwargs):
-   d[kwargs.pop('key')] = kwargs
+def add_marks(student, **kwargs):
+    d[student] = kwargs
+
+
+add_marks('Kowalski', JezykiSkryptowe=3, JezykiProgramowania=4, WF=5)
+add_marks('Nowak', JezykiSkryptowe=2, JezykiProgramowania=3, WF=4)
+
+print(d)
 ```
 #### Funkcje z domyślną wartością dla argumentów
 Kiedy chcemy zdefiniować domyślną wartość argumentu, należy w trakcie definicji funkcji przypisać wartość domyślną dla danego argumentu.
@@ -452,15 +458,25 @@ Kiedy chcemy zdefiniować domyślną wartość argumentu, należy w trakcie defi
 
 Przykład 1:
 ```python
-def call_math_func(a, b, c, d, e, func=sum):
-    return func([a, b, c, d, e])
-  
+def foo(a, b, c=0):
+    res = 1
+    if a > 1:
+        res *= a
+    if b > 1:
+        res *= b
+    if c > 1:
+        res *= c
+    else:
+        res *= -1
+    return res
 
-suma = call_math_func(1,2,3,4,5)  # domyślnie dla argumentu func zostanie przypisany adres funkcji sum.
-mini = call_math_func(1,2,3,4,5, min)  # argument func przyjmie adres funkcji min.
 
-print(suma)
-print(mini)
+
+bar = foo(3,2,5)  
+print(bar)
+
+bar = foo(5,3)  
+print(bar)
 ```
 
 Przykład 2:
@@ -479,11 +495,11 @@ print(multiple_x_by(7))  # domyślną wartością dla multiplier będzie 1
 
 ✏️ Napisz funkcję która poprosi użytkownika o jego dane osobowe jak imię, nazwisko, wiek. Zaproponuj którą z struktur danych do tego użyć.
 
-✏️ Napisz funkcję która przyjmie dwie wartości liczbowe i zwróci większą z nich (funkcja max).
+✏️ Napisz funkcję która przyjmie dwie wartości liczbowe i zwróci większą z nich (użyj funkcji wbudowanej `max`).
 
 ✏️ Napisz funkcję która przyjmie listę liczb jako argument i zwróci sumę liczb znajdujących się w liście.
 
-✏️ Napisz funkcję która przyjmie dowolnie długą listę liczb (użyj `*args`) i zwróci sumę liczb znajdujących się w liście. 
+✏️ Napisz funkcję która przyjmie dowolnie długą listę liczb (użyj `*args`) i zwróci wartość najmniejszą (użyj funkcji wbudowanej `min`).
 
 ✏️ Napisz funkcję która przyjmie od użytkownika dane: imie (`str`), nazwisko (`str`), grupa (`str`), obecny (`bool`) i zapisze je do globalnej listy studentów.
 
