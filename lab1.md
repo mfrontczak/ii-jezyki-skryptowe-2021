@@ -17,7 +17,7 @@
 
 ---
 
-:memo: W przykładach będzie użyty f-string (https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting) służący do formatowania tekstu.
+W przykładach będzie użyty :book: [f-string](https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting) służący do formatowania tekstu.
 
 Wszystkie udostępnione fragmentu kodu można skopiować i uruchomić w konsoli python'a.
 
