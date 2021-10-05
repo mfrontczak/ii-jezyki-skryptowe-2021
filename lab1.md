@@ -1,6 +1,6 @@
 # Języki Skryptowe - Lab 1
 
-**Legenda:**
+**Legenda**
 
 📖 - proszę przeczytać
 
@@ -15,10 +15,15 @@
 ## Wprowadzenie
 **Python** - Język skryptowy (język programowania wysokiego poziomu) ogólnego przeznaczenia. Do jego głównych cech zalicza się wysoką czytelność kodu źródłowego. Wspiera [programowanie wielo-paradygmatowe](https://pl.wikipedia.org/wiki/Paradygmat_programowania).
 
+---
+
+:memo: W przykładach będzie użyty f-string (https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting) służący do formatowania tekstu.
+
+Wszystkie udostępnione fragmentu kodu można skopiować i uruchomić w konsoli python'a.
 
 ### Przykłady kodu w C i Pythonie
 
-Przykład 1:
+Przykład 1 - wyświetlenie tekstu na ekranie:
 
 **Kod w C**
 ```C
@@ -35,7 +40,7 @@ int main() {
 print("Hello World from Python")
 ```
 
-Przykład 2:
+Przykład 2 - obsługa pętli:
 
 **Kod w C**
 ```C
@@ -57,8 +62,7 @@ for i in arr:
     print(i)
 ```
 
-przykład 3:
-
+przykład 3 - definicja funkcji:
 
 **Kod w C**
 ```C
@@ -257,6 +261,10 @@ person_info = ['Imię', 'Nazwisko', (2001, 9, 11)]
 
 **Zadanie** 
 
+✏️ Stwórz listę w której będą wyniki dużego lotka.
+
+**Zadanie** 
+
 ✏️ Stwórz słownik (`dict`) w którym będziesz przechowywał informację o ilości schronisk w danym mieście dla miast (kluczy): Kraków, Warszawa, Poznań.
 
 **Zadanie** 
@@ -268,6 +276,11 @@ W poprzednio utworzonym słowniku (`dict`) zaktualizuj informację o liczbie sch
 
 ✏️ Do naszego słownika z informacją o schroniskach dodaj nowe miasto Rzeszów z liczbą schronisk 3.
 
+
+**Zadanie** 
+
+✏️ Stwórz słownik w którym kluczami będą daty w formacie 'YYYY-MM-DD', a wartościami wyniki dużego lotka. 
+Wykonaj zadanie dla ostatnich 3 losowań (albo wprowadź własne liczby).
 
 **Zadanie** 
 
