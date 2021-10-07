@@ -245,7 +245,7 @@ print(s)
 
 ✏️ zapisz elementy krotki/listy/zbioru do osobnych zmiennych. 
 
-🔍 Poszukaj o rozpakowywaniu zmiennych (unpacking).
+🔍 Poszukaj o rozpakowywaniu sekwencji (unpacking).
 
 ```python
 t = (5, 'kot', '12,333', 11223)
@@ -257,7 +257,7 @@ person_info = ['Imię', 'Nazwisko', (2001, 9, 11)]
 
 **Zadanie** 
 
-✏️ Sprawdź wydajność poszczególnych struktur danych dla różnych typów danych.
+✏️ Sprawdź wydajność poszczególnych struktur danych dla różnych typów danych. (wykorzystaj do tego moduł `timeit`)
 
 **Zadanie** 
 
