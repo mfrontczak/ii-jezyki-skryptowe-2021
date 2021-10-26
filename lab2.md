@@ -14,21 +14,49 @@
 
 ### Wyrażenia listowe i generatorowe
 
+Przykład:
+```python
+arr = []
+for x in range(10):
+    arr.append(x % 3)
+print(arr)
+```
+Powyższy kod, można zastąpić przez generator wyrażenia listowego:
+```python
+arr = [x % 3 for x in range(10)]
+print(arr)
+```
+
 ### Filtrowanie
 
+
 ### Transformacja danych
+
+
+### Funkcje anonimowe (lambda)
+Przy pomocy słowa kluczowego `lambda` definiujemy jedno-wierszową funkcję z kodem. 
+Funkcje anonimowe mają zastosowanie w momencie kiedy chcemy przekazać proste wyrażenie jako parametr do innej funkcji np. `sorted`.
+
+Przykład:
+```python
+# takiej funkcji nie da się wywołać poprzez nazwę
+lambda x: x**2
+# Sposób jednorazowego wywołania
+(lambda x: x**2)(10)
+```
+Przykład 2:
+```python
+# niby-anonimowa, bo nazwana
+pow = lambda x: x**2
+print(pow(2))
+```
+
 
 ### Sortowanie danych
 
 ```python
 arr = [1, 4, 5, 6, 1, 3, 4, 7, 8]
 sorted(arr)
-```
-
-### Funkcje anonimowe (lambda)
-
-```python
-lambda x: x**2
 ```
 
 ### Obsługa plików
