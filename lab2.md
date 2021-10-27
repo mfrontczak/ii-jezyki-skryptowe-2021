@@ -13,6 +13,32 @@
 🔍 - poszukaj w internecie
 
 ### Wyrażenia listowe i generatorowe
+#### Generator
+Generator pozwala nam na użycie wyrażeń ktore zachowują się jak 📖[iterator](https://pl.wikipedia.org/wiki/Iterator). Funkcja generatora pamięta swój stan jaki posiadała w poprzednim wywołaniu. Generatory są często wykorzystywane w momencie kiedy przetwarzamy sekwencje które 
+
+Przykład:
+```python
+import random
+genr = ( (i, random.randint(1, 100)) for i in range(100) )
+type(genr)
+
+print(next(genr))
+print(next(genr))
+print(next(genr))
+```
+
+Przykład 2:
+```python
+import random
+genr = ( (i, random.randint(1, 100)) for i in range(100) )
+type(genr)
+
+for (i, r) in genr:
+    print(f"{i}-te wywołanie generatora, zwróciło losową wartość {r}")
+    
+```
+
+#### Generator listy
 
 Przykład:
 ```python
@@ -29,6 +55,48 @@ print(arr)
 
 ### Filtrowanie
 
+Funkcja wbudowana `filter(func, iter)` zwraca iterator elementów dla których `func` zwróci `True`. 
+
+Przykład z wykorzystaniem funkcji `filter`:
+```python
+def only_even(value):
+    return value % 2 == 0
+    
+arr = [1, 5, 3, 4, 2, 7, 8, 9, 10, 12, 11, 16, 14]
+
+print(f"Nasza lista przed zastosowaniem filtra: {arr}")
+
+filtered_arr = list( filter(only_even, arr) )
+
+print(f"Nasza lista po zastosowaniu filtra:{filtered_arr}")
+```
+
+Przykład filtrowania danych z wykorzystaniem pętli for:
+```python
+arr = [1, 5, 3, 4, 2, 7, 8, 9, 10, 12, 11, 16, 14]
+
+print(f"Nasza lista przed zastosowaniem filtra: {arr}")
+
+filtered_arr = []
+for value in arr:
+    if value % 2 == 0:  # if only_even(value):
+        filtered_arr.append(value)
+        
+print(f"Nasza lista po zastosowaniu filtra:{filtered_arr}") 
+```
+
+Bardziej eleganckim i zgodnym z Pythonem sposobem filtrowanie listy, jest wykorzystanie generatora wyrażeń listowych.
+
+Przykład:
+```python
+arr = [1, 5, 3, 4, 2, 7, 8, 9, 10, 12, 11, 16, 14]
+
+print(f"Nasza lista przed zastosowaniem filtra: {arr}")
+
+filtered_arr = [value for value in arr if value % 2 == 0]
+
+print(f"Nasza lista po zastosowaniu filtra:{filtered_arr}")
+```
 
 ### Transformacja danych
 
@@ -108,11 +176,12 @@ data = {
 
 jsonized = json.dumps(data)
 
-f = open('guido_data.json', 'w')
+f = open('guido_data.json', mode='w', encoding='utf-8')
 f.write(jsonized)
 f.close()
 ```
 :book: Proszę przeczytać https://docs.python.org/3/library/json.html, aby dowiedzieć się więcej.
+
 #### CSV
 ```python
 import csv
