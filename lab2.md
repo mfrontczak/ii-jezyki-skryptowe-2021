@@ -38,6 +38,13 @@ for (i, r) in genr:
     
 ```
 
+✏️ Stwórz generator który będzie zwracał kolejne liczby alfabetu.
+
+✏️ Zapoznaj się z modułem [random](https://docs.python.org/3.9/library/random.html), Korzystając z funkcji `random.choice`, napisz generator który będzie zwracał losowe alfa-numeryczne znaki.
+
+✏️ Spytaj użytkownika o to jak długie powinno być wygenerowane hasło, a następnie wykorzystaj wcześniej utworzony generator do wygenerowania losowego hasła dla użytkownika. 
+
+
 #### Generator listy
 
 Przykład:
@@ -98,8 +105,16 @@ filtered_arr = [value for value in arr if value % 2 == 0]
 print(f"Nasza lista po zastosowaniu filtra:{filtered_arr}")
 ```
 
+✏️ Wykorzystując generator wyrażenia listowego utwórz [Sito Eratostenesa](https://pl.wikipedia.org/wiki/Sito_Eratostenesa).
+
+<!-- 
 ### Transformacja danych
 
+```python
+arr = [1, 5, 3, 4, 2, 7, 8, 9, 10, 12, 11, 16, 14]
+
+powered_arr = [x**2 for x in arr] 
+-->
 
 ### Funkcje anonimowe (lambda)
 Przy pomocy słowa kluczowego `lambda` definiujemy jedno-wierszową funkcję z kodem. 
@@ -119,23 +134,64 @@ pow = lambda x: x**2
 print(pow(2))
 ```
 
+Przykład 3:
+```python
+d = {
+    'klucz1': 2,
+    'klucz2': 4,
+    'klucz3': 3,
+    'klucz4': 1
+}
+print(sorted(d))
+print(sorted(d.items()))
+
+print(sorted(d.items(), key=lambda item: item[0]))
+```
 
 ### Sortowanie danych
 
+Przykład 1:
 ```python
 arr = [1, 4, 5, 6, 1, 3, 4, 7, 8]
-sorted(arr)
+print(sorted(arr))
+print(sorted(arr, reverse=True))
 ```
 
+Przykład 2:
+```python
+words = ["ala", "ma", "kota", "i", "psa"]
+print(sorted(words))
+print(sorted(words, reverse=True))
+```
+
+:book: Proszę przeczytać https://docs.python.org/3.9/library/functions.html?highlight=sorted#sorted, aby dowiedzieć się więcej.
+
 ### Obsługa plików
+Do obsługi plików otwarcia(r)/zapisu(w)/nadpisania(a) służy funkcja `open`. Funkcja `open` działa również z wyrażeniem `with`. 
+
+Przykład:
 ```python
 f = open('plik.txt')
-f.read()
-f.readline()
+# data = f.read()
+# lines = f.readline()
 for line in f:
   print(line)
 f.close()
 ```
+
+Przykład z `with`:
+
+```python
+with open('plik.txt') as f:
+    # data = f.read()
+    # lines = f.readline()
+    for line in f:
+      print(line)
+```
+
+✏️ Utwórz plik tekstowy a następnie wczytaj go do swojego programu przy użyciu różnych metod.
+
+:book: Proszę przeczytać https://docs.python.org/3.9/library/functions.html#open, aby dowiedzieć się więcej.
 
 ### Serializacja obietków
 Serializacja to proces polegający na przekształceniu obiektów na format danych pozwalających nam na zapisanie i późniejsze odtworzenie danych z pliku, bazy danych lub pamięci komputera.
@@ -180,9 +236,16 @@ f = open('guido_data.json', mode='w', encoding='utf-8')
 f.write(jsonized)
 f.close()
 ```
+
+✏️ Stwórz bibliotekę filmów. Napisz skrypt w którym użytkownik będzie mógł dodawać filmy do pliku w formacie json. Użytkownik powinien móc wprowadzać nazwy filmów wraz z ich średnią oceną (z dowolnego serwisu) i rokiem wydawania, aż do momentu nie wprowadzenia tytułu filmu przez użytkownika.
+
 :book: Proszę przeczytać https://docs.python.org/3/library/json.html, aby dowiedzieć się więcej.
 
 #### CSV
+
+Wczytywanie danych z pliku CSV.
+
+Przykład:
 ```python
 import csv
 
@@ -195,7 +258,18 @@ for row in reader:
 f.close()
 ```
 
+Zapisywanie danych do pliku CSV.
+```python
+import csv
+
+# Zapisywanie danych do pliku CSV
+f = open('miasta.csv', mode='w', encoding='utf-8')
+writer = csv.writer(f, delimiter=';')
+writer.writerow(['Kraków', 766000])
+writer.writerow(['Wrocław', 638000])
+writer.writerow(['Warszawa', 1765000])
+f.close()
+```
+✏️ Napisz skrypt w którym użytkownik będzie mógł dodawać studentów do pliku w formacie csv. Skrypt powinien spytać użytkownika ilu studentów chce dodać a następnie w petli poprosić użytkownika o numer albumu i ocene końcową.
+
 :book: Proszę przeczytać https://docs.python.org/3/library/csv.html, aby dowiedzieć się więcej.
-
-
-
