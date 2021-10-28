@@ -166,7 +166,7 @@ print(sorted(words))
 print(sorted(words, reverse=True))
 ```
 
-:book: Proszę przeczytać https://docs.python.org/3.9/library/functions.html?highlight=sorted#sorted, aby dowiedzieć się więcej.
+:book: Proszę przeczytać https://docs.python.org/3.9/library/functions.html#sorted, aby dowiedzieć się więcej.
 
 ### Obsługa plików
 Do obsługi plików otwarcia(r)/zapisu(w)/nadpisania(a) służy funkcja `open`. Funkcja `open` działa również z wyrażeniem `with`. 
