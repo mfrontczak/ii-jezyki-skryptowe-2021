@@ -106,7 +106,8 @@ print(f"Nasza lista po zastosowaniu filtra:{filtered_arr}")
 ```
 
 ✏️ Wykorzystując generator wyrażenia listowego utwórz [Sito Eratostenesa](https://pl.wikipedia.org/wiki/Sito_Eratostenesa).
-⚠️ Najpierw spróbuj zaimplementować Sito Eratostenesa bez generatora, a dopiero następnie przekształć swój kod.
+
+🤯 Najpierw spróbuj zaimplementować Sito Eratostenesa bez generatora, a dopiero później przekształć swój kod.
 
 <!-- 
 ### Transformacja danych
