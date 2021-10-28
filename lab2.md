@@ -14,9 +14,11 @@
 
 ### Wyrażenia listowe i generatorowe
 #### Generator
-Generator pozwala nam na użycie wyrażeń ktore zachowują się jak 📖[iterator](https://pl.wikipedia.org/wiki/Iterator). Funkcja generatora pamięta swój stan jaki posiadała w poprzednim wywołaniu. Generatory są często wykorzystywane w momencie kiedy przetwarzamy sekwencje które 
+Generator pozwala nam na użycie wyrażeń ktore zachowują się jak 📖 [iterator](https://pl.wikipedia.org/wiki/Iterator). Funkcja generatora pamięta swój stan jaki posiadała w poprzednim wywołaniu. Generatory są często wykorzystywane w momencie kiedy przetwarzamy sekwencje które są bardzo długie, a w danym momencie nie interesuje nas jako całość, a jedynie jej elementy. Do obsługi generatorów używamy funkcji wbudowanej `next`.
 
-Przykład:
+:book: Proszę przeczytać https://docs.python.org/3.9/library/functions.html#next, aby dowiedzieć się więcej.
+
+Przykład 1:
 ```python
 import random
 genr = ( (i, random.randint(1, 100)) for i in range(100) )
@@ -122,7 +124,7 @@ powered_arr = [x**2 for x in arr]
 Przy pomocy słowa kluczowego `lambda` definiujemy jedno-wierszową funkcję z kodem. 
 Funkcje anonimowe mają zastosowanie w momencie kiedy chcemy przekazać proste wyrażenie jako parametr do innej funkcji np. `sorted`.
 
-Przykład:
+Przykład 1:
 ```python
 # takiej funkcji nie da się wywołać poprzez nazwę
 lambda x: x**2
