@@ -118,3 +118,40 @@ print(f"Zmienna globalna PO wywołaniem funkcji: {zmienna_globalna}")
 
 
 ## Wyrażenia regularne 
+Wyrażenia regularne są mini językiem programowania który pozwala nam na tworzenie wzorców dopasowania. 
+Modułem odpowiedzialny za udostęnienie funkcjonalności dla wyrażeń regularnych jest `re`.
+
+Przykład 1:
+
+```python
+import re
+
+p = re.compile('kot*')
+
+print(p.match("kotek"))
+print(p.match("piesek"))
+print(p.match("kot"))
+
+r = p.match("koteczek")
+
+print(r.group())
+```
+
+Przykład 2:
+```python
+import re
+p = re.compile(r'\d+')
+r = p.findall("Dopasuj cyfry 12, 13, 14 z tekstu")
+if m:
+    print('Znalezione: ', r)
+else:
+    print('Brak')
+```
+
+📖 Proszę przeczytać https://docs.python.org/3.9/howto/regex.html, aby dowiedzieć się więcej.
+
+
+✏️ Napisz regułę pozwalającą na dopasowanie adresu e-mail.
+✏️ Napisz regułę pozwalającą na dopasowanie numeru telefonu.
+✏️ Przygotuj plik w formacie HTML, w którym umieścisz kilka adresów email <a href="mailto: ...">. Przygotuj regułę dopasowania pozwalającą na znalezienie wszystkich adresów email w pliku.
+✏️ Przygotuj plik w formacie HTML, w którym umieścisz kilka linków <a href>. Przygotuj regułę dopasowania pozwalającą na znalezienie wszystkich linków do zewnętrznych serwisów, czyli takich które zawierają http/https.
