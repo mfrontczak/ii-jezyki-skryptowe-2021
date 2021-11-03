@@ -140,6 +140,10 @@ print(just_a_number_plus_one.__name__)
 print(just_a_number_plus_one(2))
 ```
 
+✏️ Stwórz dekorator dla funkcji (zwracającej liczbę) który będzie sprawdzał czy liczba jest większa od 0, jeżeli tak to ma zwrócić jej pierwiastek (użyj moduł `math` funkcję `sqrt`).
+
+✏️ Stwórz dekorator który dla dowolnej funkcji będzie wyświetlał przed jej wywołaniem wartości argumentów jakie zostały do niej przekazane.
+
 ## Zakresy zmiennych
 Widoczność zmiennej (funkcji lub klasy) zależy od miejsca w którym jest zdeklarowana. 
 
