@@ -91,8 +91,56 @@ if __name__ == "__main__":
 
 ✏️ Z modułu `random` zaimportuj funkcję `randint`, następnie użyj jej do wylosowanie trzech wartości z zakresu od 2 do 5.
 
+## Dekorator funkcji
+Dekoratorem funkcji nazywamy funkcję która jako parametr przyjmuje referencje innej funkcji w celu rozszerzenia jej funkcjonalności.
 
-### Zakresy zmiennych
+Przykład:
+
+```python
+# funkcja power_of_2 przyjmie jako parametr inną funkcję
+# a następnie wykorzysta ją wewnątrz funkcji _wrapper
+# która wywoła przekazaną funkcję i zmodyfikuje jej wartość
+def power_of_2(func):
+    def _wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        return result**2
+    return _wrapper
+
+
+def just_a_number_plus_one(a):
+    return a + 1
+
+print(just_a_number_plus_one.__name__)
+
+# tutaj dokonujemy "podmiany"
+just_a_number_plus_one = power_of_2(just_a_number_plus_one)
+
+print(just_a_number_plus_one.__name__)
+
+print(just_a_number_plus_one(2))
+```
+
+Aby użyć funkcji jako dekorator należy użyć konstrukcji `@` + nazwa funkcji.
+
+Przykład:
+
+```python
+def power_of_2(func):
+    def _wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        return result**2
+    return _wrapper
+
+@power_of_2
+def just_a_number_plus_one(a):
+    return a + 1
+
+print(just_a_number_plus_one.__name__)
+
+print(just_a_number_plus_one(2))
+```
+
+## Zakresy zmiennych
 Widoczność zmiennej (funkcji lub klasy) zależy od miejsca w którym jest zdeklarowana. 
 
 Aby zmienna była widoczna funkcji należy użyć słowa kluczowego `global` a następnie podać nazwę zmiennej do której chcemy mieć dostęp w obrębie naszej funkcji.
@@ -115,49 +163,6 @@ funkcja()
 print("-" * 50)
 print(f"Zmienna globalna PO wywołaniem funkcji: {zmienna_globalna}")  
 ```
-
-
-## Wyrażenia regularne 
-Wyrażenia regularne są mini językiem programowania który pozwala nam na tworzenie wzorców dopasowania. 
-Modułem odpowiedzialny za udostęnienie funkcjonalności dla wyrażeń regularnych jest `re`.
-
-Przykład 1:
-
-```python
-import re
-
-p = re.compile('kot*')
-
-print(p.match("kotek"))
-print(p.match("piesek"))
-print(p.match("kot"))
-
-r = p.match("koteczek")
-
-print(r.group())
-```
-
-Przykład 2:
-```python
-import re
-p = re.compile(r'\d+')
-r = p.findall("Dopasuj cyfry 12, 13, 14 z tekstu")
-if m:
-    print('Znalezione: ', r)
-else:
-    print('Brak')
-```
-
-📖 Proszę przeczytać https://docs.python.org/3.9/howto/regex.html, aby dowiedzieć się więcej.
-
-
-✏️ Napisz regułę pozwalającą na dopasowanie adresu e-mail.
-
-✏️ Napisz regułę pozwalającą na dopasowanie numeru telefonu.
-
-✏️ Przygotuj plik w formacie HTML, w którym umieścisz kilka adresów email \<a href="mailto: ..."\>. Przygotuj regułę dopasowania pozwalającą na znalezienie wszystkich adresów email w pliku.
-    
-✏️ Przygotuj plik w formacie HTML, w którym umieścisz kilka linków \<a href\>. Przygotuj regułę dopasowania pozwalającą na znalezienie wszystkich linków do zewnętrznych serwisów, czyli takich które zawierają http/https.
     
 ## Wyjątki
 Wyjątkiem nazywamy często zdarzenie w wyniku którego nasz skrypt lub program nie działa prawidłowo. Kiedy skrypt zgłosi wyjątek interpreter przerwie jego wykonanie i poinformuje o błędzie użytkownika. Na szczęście w języku Python jak i wielu innych językach programowania istnieje mechanizm służący przechwytywaniu wyjątku przez programistę i obsługi tego zdarzenia.
