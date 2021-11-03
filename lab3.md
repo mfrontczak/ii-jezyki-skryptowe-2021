@@ -152,6 +152,10 @@ else:
 
 
 ✏️ Napisz regułę pozwalającą na dopasowanie adresu e-mail.
+
 ✏️ Napisz regułę pozwalającą na dopasowanie numeru telefonu.
-✏️ Przygotuj plik w formacie HTML, w którym umieścisz kilka adresów email <a href="mailto: ...">. Przygotuj regułę dopasowania pozwalającą na znalezienie wszystkich adresów email w pliku.
-✏️ Przygotuj plik w formacie HTML, w którym umieścisz kilka linków <a href>. Przygotuj regułę dopasowania pozwalającą na znalezienie wszystkich linków do zewnętrznych serwisów, czyli takich które zawierają http/https.
+
+✏️ Przygotuj plik w formacie HTML, w którym umieścisz kilka adresów email \<a href="mailto: ..."\>. Przygotuj regułę dopasowania pozwalającą na znalezienie wszystkich adresów email w pliku.
+    
+✏️ Przygotuj plik w formacie HTML, w którym umieścisz kilka linków \<a href\>. Przygotuj regułę dopasowania pozwalającą na znalezienie wszystkich linków do zewnętrznych serwisów, czyli takich które zawierają http/https.
+    
