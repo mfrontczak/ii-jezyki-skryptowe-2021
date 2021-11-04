@@ -40,7 +40,7 @@ for (i, r) in genr:
     
 ```
 
-✏️ Stwórz generator który będzie zwracał kolejne liczby alfabetu.
+✏️ Stwórz generator który będzie zwracał kolejne litery alfabetu.
 
 ✏️ Zapoznaj się z modułem [random](https://docs.python.org/3.9/library/random.html), Korzystając z funkcji `random.choice`, napisz generator który będzie zwracał losowe alfa-numeryczne znaki.
 
