@@ -13,7 +13,7 @@
 🔍 - poszukaj w internecie
 
 ## Tworzenie modułów
-W Pythonie istnieje wiele standardowych gotowych do użycia modułów. Listę wszystkich modułów można znaleść [tutaj](https://docs.python.org/3.9/py-modindex.html).
+W Pythonie istnieje wiele standardowych gotowych do użycia modułów. Listę wszystkich modułów można znaleźć [tutaj](https://docs.python.org/3.9/py-modindex.html).
 
 Modułem nazywamy plik python'a (z rozszerzeniem `.py`) który zawiera definicję funkcji, klas lub zmiennych. Najczęściej w module przechowuje się funkcjonalność zgodną z jego przeznaczeniem, na przykład wbudowany moduł `random` przechowuje funkcje związane z losowaniem.
 
