@@ -197,7 +197,7 @@ with open('plik.txt') as f:
 
 :book: Proszę przeczytać https://docs.python.org/3.9/library/functions.html#open, aby dowiedzieć się więcej.
 
-### Serializacja obietków
+### Serializacja obiektów
 Serializacja to proces polegający na przekształceniu obiektów na format danych pozwalających nam na zapisanie i późniejsze odtworzenie danych z pliku, bazy danych lub pamięci komputera.
 
 ⚠️ Pliki do przykładów znajdują się w katalogu [materiały/lab2](materiały/lab2).
