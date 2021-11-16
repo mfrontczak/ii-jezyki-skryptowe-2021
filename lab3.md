@@ -123,7 +123,6 @@ print(just_a_number_plus_one(2))
 Aby użyć funkcji jako dekorator należy użyć konstrukcji `@` + nazwa funkcji.
 
 Przykład:
-
 ```python
 def power_of_2(func):
     def _wrapper(*args, **kwargs):
@@ -140,9 +139,36 @@ print(just_a_number_plus_one.__name__)
 print(just_a_number_plus_one(2))
 ```
 
+Dektorator może również działać jak funkcja i przyjmować parametry.
+
+Przykład:
+```python
+def multiply(by):
+    def _wrapper(func):
+        def _inner(*args, **kwargs):
+            return func(*args, **kwargs) * by
+        return _inner
+    return _wrapper
+
+
+@multiply(2)
+def add_two_numbers(a, b):
+    return a + b
+    
+    
+@multiply(3)
+def add_three_numbers(a, b, c):
+    return a + b
+
+print(add_two_numbers(3, 2)) 
+print(add_three_numbers(1, 2, 3))
+```
+
 ✏️ Stwórz dekorator dla funkcji (zwracającej liczbę) który będzie sprawdzał czy liczba jest większa od 0, jeżeli tak to ma zwrócić jej pierwiastek (użyj moduł `math` funkcję `sqrt`).
 
 ✏️ Stwórz dekorator który dla dowolnej funkcji będzie wyświetlał przed jej wywołaniem wartości argumentów jakie zostały do niej przekazane.
+
+✏️ Napisz dekorator który zrzutuje argumenty funkcji na wskazane typy.
 
 ## Zakresy zmiennych
 Widoczność zmiennej (funkcji lub klasy) zależy od miejsca w którym jest zdeklarowana. 
