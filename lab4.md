@@ -17,6 +17,19 @@
 Wyrażenia regularne są mini językiem programowania który pozwala nam na tworzenie wzorców dopasowania. 
 Modułem odpowiedzialny za udostęnienie funkcjonalności dla wyrażeń regularnych jest `re`.
 
+### meta-znaki 
+Meta-znaki posiadają specjalne przeznaczenie w wyrażeniach regularnych. 
+
+| Meta znak  | Przeznaczenie | Przykład |
+| ------------- | ------------- | ------------- |
+| $  | kończy się ...  |  "python$" |
+| ^  | zaczyna się od ...   | "^Programowanie" |
+| [] | zbiór znaków opisany w nawiasach kwadratowych | "[abc]" |
+
+### Funkcja search
+
+### Kompilowanie wzorca
+
 Przykład 1:
 
 ```python
