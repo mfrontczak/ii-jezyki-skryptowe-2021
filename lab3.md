@@ -216,7 +216,9 @@ except (FileNotFoundError, IOError, OSError) as e:
 ```
 
 📖 Proszę przeczytać https://docs.python.org/3.9/library/exceptions.html, aby dowiedzieć się więcej.
+
 📖 Proszę przeczytać https://docs.python.org/3.9/library/exceptions.html#exception-hierarchy, aby dowiedzieć się więcej.
+
 📖 Proszę przeczytać https://docs.python.org/3.9/tutorial/errors.html, aby dowiedzieć się więcej.
 
 ✏️ Z listy dostępnych wyjątków wybierz jeden a następnie użyj go wraz z składnią `raise` do wywołania wyjątku. Napisz skrypt który obsłuży wyjątek - w dowolny sposób.
