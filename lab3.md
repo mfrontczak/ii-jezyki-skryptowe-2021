@@ -87,9 +87,10 @@ if __name__ == "__main__":
 
 ✏️ Stwórz moduł który udostępni funkcje liczącą średnią artmetyczną i średnią geometryczną.
 
-✏️ Napisz skrypt który wykorzysta obie funkcje. Użytkownik powinien móc wprowadzić dane z klawiatury.
+✏️ Stwórz kolejny moduł w którym znajdą się funkcję do liczenia odchylenia standardowego. 
 
-✏️ Z modułu `random` zaimportuj funkcję `randint`, następnie użyj jej do wylosowanie trzech wartości z zakresu od 2 do 5.
+✏️ Napisz skrypt który wykorzysta funkcje z poprzednio utworzonych modułów. Użytkownik powinien móc wprowadzić dane z klawiatury.
+
 
 ## Dekorator funkcji
 Dekoratorem funkcji nazywamy funkcję która jako parametr przyjmuje referencje innej funkcji w celu rozszerzenia jej funkcjonalności.
@@ -225,7 +226,9 @@ except ValueError as err:
     print(err)
 ```
 
-Oczywiście użycie konstrukcji `except` bez podania typu wyjątku który chcemy obsłużyć, będzie przechwytywać wszystkie możliwe wyjątki. W wypadku kiedy chcemy przechwycić konkretny wyjątek należy po `except` podać jego nazwę (jak w przykładzie 2). Konstrukcja `except ... as e` pozwala nam na uzyskanie dostępu do informacji o wyjątku zwróconym przez interpreter.
+Oczywiście użycie konstrukcji `except` bez podania typu wyjątku który chcemy obsłużyć, będzie przechwytywać wszystkie możliwe wyjątki. W wypadku kiedy chcemy przechwycić konkretny wyjątek należy po `except` podać jego nazwę (jak w przykładzie 2). 
+
+Konstrukcja `except ... as e` pozwala nam na uzyskanie dostępu do informacji o wyjątku zwróconym przez interpreter.
 
 ### Przechwytywanie wielu wyjątków
 Python umożliwia nam zdefiniowanie w jednym wierszu `except` wielu wyjątków jakie chcemy obsłużyć.
