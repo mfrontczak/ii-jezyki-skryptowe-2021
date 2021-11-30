@@ -22,15 +22,21 @@ Modułem odpowiedzialny za udostęnienie funkcjonalności dla wyrażeń regularn
 ### meta-znaki 
 Meta-znaki posiadają specjalne przeznaczenie w wyrażeniach regularnych. 
 
-| Meta znak  | Przeznaczenie | Przykład |
+| token/meta-znak  | Przeznaczenie | Przykład |
 | ------------- | ------------- | ------------- |
 | $  | kończy się ...  |  "python$" |
 | ^  | zaczyna się od ...   | "^Programowanie" |
 | .  | dowolny znak | ".ot" |
 | \*  | dopasowanie zachłanne | "\*" |
-| + | wyrażenie występuje 1 lub więcej razy | "[a-z]+" |
+| + | wyrażenie występuje 1 lub więcej razy | "\[a-z\]+" |
 | ? | wyrażenie występuje 0 lub 1 raz | "kot?" |
-| [] | zbiór znaków opisany w nawiasach kwadratowych | "[abc]" |
+| {m} | wyrażenie musi być dokładnie `m` razy dopasowane | "\[abc\]{5}" |
+| {n,m} | wyrażenie musi być dopasowane od `n` do `m` razy | "\a{3,5}" |
+| \d | dopasowuje liczby | "\d?" |
+| \s | dopasowuje białe znaki | "\s+" |
+| \S | dopasowuje nie-białe znaki | "\S+ \S+" |
+| [] | któryś z znaków opisanych w nawiasach kwadratowych | "\[abc\]" |
+| \[a-z\] | zakres znaków od a-z | "\[a-z\]+" |
 
 📖 Proszę przeczytać https://pl.wikipedia.org/wiki/Wyra%C5%BCenie_regularne#Wyra%C5%BCenia_zach%C5%82anne.
 
@@ -77,6 +83,33 @@ else:
     print("brak wyników")
 ```
 
+Przykład 4:
+```python
+import re
+p = '(\S+) (\S+)'
+s = 'Peter Snake'
+r = re.search(p, s)
+print(r.groups()) # zwróć uwagę na groups
+```
+
+### Funkcja findall
+Funkcja `re.findall(pattern, string, flags=0)` zwraca listę dopasowań.
+
+Przykład 1:
+```python
+import re
+p = '[abc]{3}'
+s = 'abc a-a-a ccc bb5b ddd aaa'
+print(re.findall(p, s))
+```
+Przykład 2:
+```python
+import re
+p = 'a{3,5}'
+s = 'a aa aaa aaaa aaaaa aaaaaa aaaaaaa'
+print(re.findall(p, s))
+```
+
 ### Kompilowanie wzorca
 
 Przykład 1:
@@ -111,6 +144,8 @@ else:
 ✏️ Napisz regułę pozwalającą na dopasowanie adresu e-mail.
 
 ✏️ Napisz regułę pozwalającą na dopasowanie numeru telefonu.
+
+✏️ Napisz skrypt który z wykorzystaniem wyrażeń regularnych znajdzie wszystkie funkcje i klasy w pliku `.py`.
 
 ✏️ Wczytaj plik `maile.html` z [materiały/lab4](materiały/lab4) . Przygotuj regułę dopasowania pozwalającą na znalezienie wszystkich adresów email w tagu \<a href\> w pliku HTML.
   
