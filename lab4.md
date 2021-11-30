@@ -42,7 +42,7 @@ Meta-znaki posiadają specjalne przeznaczenie w wyrażeniach regularnych.
 | [] | któryś z znaków opisanych w nawiasach kwadratowych | "\[abc\]" |
 | \[a-z\] | zakres znaków od a-z | "\[a-z\]+" |
 | (...) | przechwyć wszystko co jest zawarte w nawiasach | "(\d)+" |
-| a|b  | dopasowuje `a` lub `b` | "(kot|pies)"
+| a\|b  | dopasowuje `a` lub `b` | "(kot\|pies)" |
 
 📖 Proszę przeczytać https://pl.wikipedia.org/wiki/Wyra%C5%BCenie_regularne#Wyra%C5%BCenia_zach%C5%82anne.
 
