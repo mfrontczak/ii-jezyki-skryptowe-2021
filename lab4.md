@@ -169,5 +169,5 @@ else:
 ✏️ Napisz regulę pozwalającą na wyciągnięcie wszystkich odmian Polska z 
 `'Witaj Polsko, Polska to piękny kraj. W Polsce żyje bardzo dużo ludzi. "Hello" oznacza "Cześć" po polsku.'`.
 
-✏️ Wczytaj plik `maile.html` z [materiały/lab4](materiały/lab4) . Przygotuj regułę dopasowania pozwalającą na znalezienie wszystkich adresów email w tagu \<a href\> w pliku HTML.
+✏️ Wczytaj plik `maile.html` z [materiały/lab4](materiały/lab4) . Przygotuj regułę dopasowania pozwalającą na znalezienie wszystkich adresów email w pliku HTML.
   
