@@ -17,6 +17,8 @@
 Wyrażenia regularne są mini językiem programowania który pozwala nam na tworzenie wzorców dopasowania. 
 Modułem odpowiedzialny za udostęnienie funkcjonalności dla wyrażeń regularnych jest `re`.
 
+📖 Proszę przeczytać https://docs.python.org/3/library/re.html.
+
 📖 Proszę przeczytać https://pl.wikipedia.org/wiki/Wyrażenie_regularne.
 
 ### meta-znaki 
@@ -154,7 +156,9 @@ else:
     print('Brak')
 ```
 
-📖 Proszę przeczytać https://docs.python.org/3.9/howto/regex.html, aby dowiedzieć się więcej.
+📖 Proszę przeczytać https://docs.python.org/3.9/howto/regex.html aby dowiedzieć się więcej.
+
+### Zadania
 
 ✏️ Napisz regułę pozwalającą na dopasowanie adresu e-mail.
 
