@@ -125,6 +125,7 @@ print(re.findall(p, s))
 ```
 
 ### Kompilowanie wzorca
+Kiedy pracujemy na bardzo dużej ilości danych warto skorzystać z `re.compile(pattern, flags=0)`. 
 
 Przykład 1:
 
