@@ -32,11 +32,17 @@ Meta-znaki posiadają specjalne przeznaczenie w wyrażeniach regularnych.
 | ? | wyrażenie występuje 0 lub 1 raz | "kot?" |
 | {m} | wyrażenie musi być dokładnie `m` razy dopasowane | "\[abc\]{5}" |
 | {n,m} | wyrażenie musi być dopasowane od `n` do `m` razy | "\a{3,5}" |
+| {n,} | wyrażenie musi być dopasowane `n` lub więcej razy | "\a{3,}" |
 | \d | dopasowuje liczby | "\d?" |
+| \D | dopasowuje wszystko prócz liczb | "\D+" |
 | \s | dopasowuje białe znaki | "\s+" |
 | \S | dopasowuje nie-białe znaki | "\S+ \S+" |
+| \w | dopasowuje dowolne słowo | "\w" |
+| \W | dopasowuje wszystko prócz słów | "\W+" |
 | [] | któryś z znaków opisanych w nawiasach kwadratowych | "\[abc\]" |
 | \[a-z\] | zakres znaków od a-z | "\[a-z\]+" |
+| (...) | przechwyć wszystko co jest zawarte w nawiasach | "(\d)+" |
+| a|b  | dopasowuje `a` lub `b` | "(kot|pies)"
 
 📖 Proszę przeczytać https://pl.wikipedia.org/wiki/Wyra%C5%BCenie_regularne#Wyra%C5%BCenia_zach%C5%82anne.
 
@@ -110,6 +116,14 @@ s = 'a aa aaa aaaa aaaaa aaaaaa aaaaaaa'
 print(re.findall(p, s))
 ```
 
+Przykład 3:
+```python
+import re
+p = '(kot.|pies)'
+s = 'kot pies tok siep kotopies'
+print(re.findall(p, s))
+```
+
 ### Kompilowanie wzorca
 
 Przykład 1:
@@ -146,6 +160,9 @@ else:
 ✏️ Napisz regułę pozwalającą na dopasowanie numeru telefonu.
 
 ✏️ Napisz skrypt który z wykorzystaniem wyrażeń regularnych znajdzie wszystkie funkcje i klasy w pliku `.py`.
+
+✏️ Napisz regulę pozwalającą na wyciągnięcie wszystkich odmian Polska z 
+`'Witaj Polsko, Polska to piękny kraj. W Polsce żyje bardzo dużo ludzi. "Hello" oznacza "Cześć" po polsku.'`.
 
 ✏️ Wczytaj plik `maile.html` z [materiały/lab4](materiały/lab4) . Przygotuj regułę dopasowania pozwalającą na znalezienie wszystkich adresów email w tagu \<a href\> w pliku HTML.
   
