@@ -17,6 +17,8 @@
 Wyrażenia regularne są mini językiem programowania który pozwala nam na tworzenie wzorców dopasowania. 
 Modułem odpowiedzialny za udostęnienie funkcjonalności dla wyrażeń regularnych jest `re`.
 
+📖 Proszę przeczytać https://pl.wikipedia.org/wiki/Wyrażenie_regularne.
+
 ### meta-znaki 
 Meta-znaki posiadają specjalne przeznaczenie w wyrażeniach regularnych. 
 
@@ -24,9 +26,56 @@ Meta-znaki posiadają specjalne przeznaczenie w wyrażeniach regularnych.
 | ------------- | ------------- | ------------- |
 | $  | kończy się ...  |  "python$" |
 | ^  | zaczyna się od ...   | "^Programowanie" |
+| .  | dowolny znak | ".ot" |
+| \*  | dopasowanie zachłanne | "\*" |
+| + | wyrażenie występuje 1 lub więcej razy | "[a-z]+" |
+| ? | wyrażenie występuje 0 lub 1 raz | "kot?" |
 | [] | zbiór znaków opisany w nawiasach kwadratowych | "[abc]" |
 
+📖 Proszę przeczytać https://pl.wikipedia.org/wiki/Wyra%C5%BCenie_regularne#Wyra%C5%BCenia_zach%C5%82anne.
+
 ### Funkcja search
+Funkcja `re.search(pattern, string, flags=0)` zwraca pierwszy zgodny z wzorcem łańcuch znakowy. 
+Funkcja zwraca obiekt `re.Match` lub `None`.
+
+Przykład 1:
+```python
+import re
+p = '[a-z\.]+'
+s = '-!!michal.frontczak(at)up.krakow.pl% %lub% %michal.frontczak@up.krakow.pl!!-'
+r = re.search(p, s)
+print(result.group()) # michal.frontczak
+```
+
+Przykład 2:
+```python
+import re
+p = '.ome.'
+s = 'domek'
+r = re.search(p, s)
+print(r.group())
+
+
+s = 'Tomek'
+r = re.search(p, s)
+print(r.group())
+
+s = 'Kometa'
+r = re.search(p, s)
+print(r.group())
+```
+
+Przykład 3:
+```python
+import re
+p = 'kot? kot'
+s = 'kotek kot'
+r = re.search(p, s)
+if r:
+    print(r.group())
+else:
+    print("brak wyników")
+```
 
 ### Kompilowanie wzorca
 
