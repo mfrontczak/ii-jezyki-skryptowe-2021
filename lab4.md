@@ -46,6 +46,12 @@ Meta-znaki posiadają specjalne przeznaczenie w wyrażeniach regularnych.
 | (...) | przechwyć wszystko co jest zawarte w nawiasach | "(\d)+" |
 | a\|b  | dopasowuje `a` lub `b` | "(kot\|pies)" |
 
+### Flagi
+| re.IGNORECASE | ignoruje wielkość znaków. |
+| re.MULTILINE | Wyszukanie w wielu liniach. |
+| re.ASCII | Tylko znaki ASCII, znaki UNICODE są ignorowane. |
+| re.DOTALL | Dopasowuje dowolny znak, nawet jeżeli jest to znak nowej linii. |
+
 📖 Proszę przeczytać https://pl.wikipedia.org/wiki/Wyra%C5%BCenie_regularne#Wyra%C5%BCenia_zach%C5%82anne.
 
 ### Funkcja search
@@ -165,6 +171,8 @@ else:
 ✏️ Napisz regułę pozwalającą na dopasowanie numeru telefonu.
 
 ✏️ Napisz skrypt który z wykorzystaniem wyrażeń regularnych znajdzie wszystkie funkcje i klasy w pliku `.py`.
+
+✏️ Napisz regułę pozwalającą na dopasowanie wydobycie protokołu, domeny, i adresu z linku do strony www. np. https://ii.up.krakow.pl/aktualnosci/ -> ('https', 'ii.up.krakow.pl' , '/aktualnosci/')
 
 ✏️ Napisz regulę pozwalającą na wyciągnięcie wszystkich odmian Polska z 
 `'Witaj Polsko, Polska to piękny kraj. W Polsce żyje bardzo dużo ludzi. "Hello" oznacza "Cześć" po polsku.'`.
