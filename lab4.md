@@ -47,6 +47,8 @@ Meta-znaki posiadają specjalne przeznaczenie w wyrażeniach regularnych.
 | a\|b  | dopasowuje `a` lub `b` | "(kot\|pies)" |
 
 ### Flagi
+| Flaga         | Opis
+| ------------- | ------------------------- |
 | re.IGNORECASE | ignoruje wielkość znaków. |
 | re.MULTILINE | Wyszukanie w wielu liniach. |
 | re.ASCII | Tylko znaki ASCII, znaki UNICODE są ignorowane. |
