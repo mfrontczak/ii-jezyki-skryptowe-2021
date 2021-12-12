@@ -15,3 +15,8 @@
 ## Automatyzacja zadań
 
 ### TBD
+
+
+### Zadania
+
+1. Napisz skrypt który będzie sprawdzał dany katalog w celu znalezienia wszystkich plików z tą samą nazwą.
