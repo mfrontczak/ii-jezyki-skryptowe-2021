@@ -13,14 +13,24 @@
 🔍 - poszukaj w internecie
 
 ## Automatyzacja zadań
+Automatyzacją nazywamy każdy proces który zastępuję proces wykonywany manualnie przez człowieka.
 
-### TBD
-
+⚠️ Moduły których możesz potrzebować do wykonanania zadań 🔍:
+* urllib
+* requests
+* glob
+* os
 
 ### Zadania
 
-✏️ Napisz skrypt który będzie sprawdzał dany katalog w celu znalezienia wszystkich plików z tą samą nazwą. Użyj do tego funkcji `glob` z modułu `glob`.
+✏️ Programista potrzebuje znaleźć wszystkie duplikaty plików (z nieunikalną nazwą) w danym katalogu.
 
-✏️ Napisz skrypt który pogrupuje w osobne foldery, pliki w danym katalogu zgodnie z datą ich utworzenia. Użyj do tego funkcji `stat` z modułu `os`.
+✏️ Programista potrzebuje pogrupować pliki w osobne foldery zgodnie z datą (rrrr/mm) utworzenia plików. 
 
-✏️ Napisz skrypt który będzie pytał użytkownika o adres URL a następnie z wykorzystaniem wyrażeń regularnych znajdował wszystkie linki do plików z rozszerzeniem CSV. W tym celu możesz użyć modułu `urllib3` lub `requests`.
+✏️ Programista potrzebuje wyszukać pod wskazanym adresem URL wszystkich linków do plików z rozszerzeniem CSV.
+
+✏️ Programista potrzebuje skrypt który utworzy kopię zapasową plików które zostały zmodyfikowane dzisiaj. 
+
+✏️ Programista potrzebuje skrypt który wyświetli mu informacje o aktualnym stanie pogody w jego mieście.
+
+
