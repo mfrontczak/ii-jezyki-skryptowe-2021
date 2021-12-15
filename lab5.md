@@ -24,7 +24,7 @@ Automatyzacją nazywamy każdy proces który zastępuję proces wykonywany manua
 
 ### Zadania
 
-✏️ Programista potrzebuje znaleźć wszystkie duplikaty plików (z nieunikalną nazwą) w danym katalogu.
+✏️ Programista potrzebuje znaleźć wszystkie duplikaty plików (z nieunikalną nazwą i rozszerzeniem) w danym katalogu wyszukując rekurencyjnie.
 
 ✏️ Programista potrzebuje pogrupować pliki w osobne foldery zgodnie z datą (rrrr/mm) utworzenia plików. 
 
