@@ -15,7 +15,7 @@
 ## Automatyzacja zadań
 Automatyzacją nazywamy każdy proces który zastępuję proces wykonywany manualnie przez człowieka.
 
-⚠️ Moduły których możesz potrzebować do wykonanania zadań 🔍:
+🔍 Moduły których możesz potrzebować do wykonanania zadań:
 * urllib
 * requests
 * glob
