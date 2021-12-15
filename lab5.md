@@ -20,6 +20,7 @@ Automatyzacją nazywamy każdy proces który zastępuję proces wykonywany manua
 * requests
 * glob
 * os
+* shutil
 
 ### Zadania
 
